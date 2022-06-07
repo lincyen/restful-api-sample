@@ -1,11 +1,17 @@
 package io.github.lincyen.sample.common;
 
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+
 import static org.junit.jupiter.api.Assertions.*;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class CommonUtilsTest {
 
     @Test
+    @Order(value = 1)
     void validateNumber() {
         assertTrue(CommonUtils.validateNumber("0"));
         assertTrue(CommonUtils.validateNumber("1440"));
@@ -13,6 +19,7 @@ class CommonUtilsTest {
     }
 
     @Test
+    @Order(value = 2)
     void validateEmail() {
         assertTrue(CommonUtils.validateEmail("hsyou@niepay.co.kr"));
         assertFalse(CommonUtils.validateEmail("Abc.example.com"));
@@ -21,12 +28,14 @@ class CommonUtilsTest {
     }
 
     @Test
+    @Order(value = 3)
     void validateUrl() {
         assertTrue(CommonUtils.validateUrl("https://www.nicepay.co.kr"));
         assertFalse(CommonUtils.validateUrl("www.nicepay.co.kr"));
     }
 
     @Test
+    @Order(value = 4)
     void validIPv4Addr() {
         assertTrue(CommonUtils.validIPv4Addr("127.0.0.1"));
         assertFalse(CommonUtils.validIPv4Addr("172202312"));
@@ -40,6 +49,7 @@ class CommonUtilsTest {
     }
 
     @Test
+    @Order(value = 5)
     void isNumeric() {
         assertTrue(CommonUtils.isNumeric("123"));
         assertTrue(CommonUtils.isNumeric("0123"));
