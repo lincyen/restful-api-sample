@@ -1,8 +1,12 @@
+# sbteclipse plugin
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-**/out/
+
+### Java ###
+# Compiled class file
+*.class
 
 ### IntelliJ IDEA ###
 .idea/.gitignore
